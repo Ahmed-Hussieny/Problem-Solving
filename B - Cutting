@@ -1,0 +1,62 @@
+// B - Cutting
+#include<bits/stdc++.h>
+#include <iostream>
+#include <algorithm>
+ 
+//{@ author Ahmed_Hussieny}
+using namespace std;
+typedef long long ll;
+#define inf 100000000000
+#define N 10000
+void split(int x, int n){
+ 
+ 
+}
+ 
+int solve(){
+    int n,B;
+    cin>>n>>B;
+    vector<int>v;
+    vector<int >v2;
+    int x=B;
+    int arr[100];
+    int y;
+    for (int i = 0; i < n; i++) {
+        cin>>arr[i];
+    }
+    int odd=0,even=0;
+    for (int i = 0; i < n; i++) {
+        if (i != 0 && odd==even) {
+                v2.push_back((abs(arr[i] - arr[i -1])));
+        }
+        if(arr[i]%2==0)
+            even++;
+        else
+            odd++;
+    }
+    sort(v2.begin(),v2.end());
+    int ans=0;
+    int sum=0;
+    for (int i = 0; i <v2.size() ; i++) {
+ 
+            if(B>=v2[i]){
+                ans++;
+                B-=v2[i];
+            } else{
+                break;
+            }
+ 
+    }cout <<ans;
+ 
+ 
+    return 0;
+}
+ 
+int main()
+{
+//int t;
+//cin>>t;
+//    while (t--){
+        solve();
+//    }
+}
